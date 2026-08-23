@@ -1,4 +1,4 @@
-## Note on how authentication and authorization works in this project
+## Historical note: authentication flow for the retired Chrome extension
 
 This is a brief note to clarify my mental model of how authentication and authorization works in this project.
 

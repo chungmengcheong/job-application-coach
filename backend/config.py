@@ -45,7 +45,7 @@ class Settings(BaseSettings):
     # gpt-oss: "low"/"medium"/"high") - see docs/architecture.md for measurements.
     llm_reasoning_effort: str = "none"
     llm_base_url: str = "https://api.groq.com/openai/v1"
-    llm_max_completion_tokens: int = 4096
+    llm_max_completion_tokens: int = 2800
     llm_timeout_connect: float = 10.0
     llm_timeout_read: float = 180.0
     llm_timeout_write: float = 30.0

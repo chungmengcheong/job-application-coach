@@ -2,8 +2,6 @@
 
 Job Application Coach helps you maximize your chances of landing an interview.
 
-Note, The code is a work-in-progress. It is not intended for use by anyone other than myself and my beta testers. I'm using this project to get hands-on experience with (a) creating and supporting an AI powered product, especially on the AI pipeline such as evals, and (b) building using the latest AI design and development tools. I wrote most of the back-end manually and vibe-coded the front-end.
-
 ### Product features
 Job Application Coach is a web application that:
 * Assess how the user's resume lines up against a job (description). 
@@ -13,18 +11,11 @@ Job Application Coach is a web application that:
 * [Future] Auto-complete the job application forms on their behalf!
 * [Future] Identifies relevant 1st and 2nd degree contacts for networking into the job
 
-Behind the scenes, Job Application Coach uses a custom AI pipeline incorporating
-the developer's years of career coaching and recruiting experience together with
-the latest LLM models.
+Behind the scenes, Job Application Coach uses a custom AI pipeline incorporating the developer's years of career coaching and recruiting experience together with the latest LLM models.
 
 ### Using the application
 
-The supported product is the web application at
-https://jobapplicationcoach.pythonanywhere.com. Chrome extension development and
-releases are frozen during the web-first refactor, so the extension is not a
-supported installation or release target today. A future extension may return
-as a thin client for browser-native capabilities after the web workflow is
-proven.
+The supported product is the web application at https://jobapplicationcoach.pythonanywhere.com. Chrome extension development and releases are frozen during the web-first refactor, so the extension is not a supported installation or release target today. A future extension may return as a thin client for browser-native capabilities after the web workflow is proven.
 
 
 ### Repo details
@@ -50,8 +41,8 @@ the account username differs.
 
    ```bash
    cd ~
-   git clone https://github.com/chungmengcheong/job-application-coach.git jobapplicationcoach
-   cd ~/jobapplicationcoach
+   git clone https://github.com/chungmengcheong/job-application-coach.git
+   cd ~/job-application-coach
    ```
 
 2. Create the virtualenv used by the web app and install the runtime
@@ -82,7 +73,7 @@ the account username differs.
 
    ```bash
    pa website create --domain jobapplicationcoach.pythonanywhere.com \
-     --command '/home/jobapplicationcoach/.virtualenvs/jobapplicationcoach-venv/bin/uvicorn --app-dir /home/jobapplicationcoach/jobapplicationcoach --uds ${DOMAIN_SOCKET} backend.api:app'
+     --command '/home/jobapplicationcoach/.virtualenvs/jobapplicationcoach-venv/bin/uvicorn --app-dir /home/jobapplicationcoach/job-application-coach --uds ${DOMAIN_SOCKET} backend.api:app'
    ```
 
 5. Reload the web app after creating it or changing `.env`:
@@ -96,7 +87,7 @@ the account username differs.
 After each code update:
 
 ```bash
-cd ~/jobapplicationcoach
+cd ~/job-application-coach
 git pull origin main
 ~/.virtualenvs/jobapplicationcoach-venv/bin/python -m pip install -r requirements.txt
 pa website reload --domain jobapplicationcoach.pythonanywhere.com

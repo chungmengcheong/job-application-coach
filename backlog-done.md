@@ -590,3 +590,14 @@ imports from or runtime dependency on the frozen implementation.
   hypothesis.
 
 gates_release_type: clean-up
+
+## Increment 3.1 — Rename project and cut over the public deployment
+
+Landed in `138ba6a` to rename the project to **Job Application Coach** and make `jobapplicationcoach.pythonanywhere.com` the canonical deployment before Increment 3.5 creates the first supported personal database.
+
+- Renamed the public GitHub repository to `job-application-coach`; the local Git remote points to the renamed repository.
+- Registered the new production origin and exact `/app/auth-callback.html` OAuth callback, then verified live login on the new host.
+- Kept stable operational identifiers where renaming would create migration work: browser storage keys, SQLite table names, the `data/reviews.db` filename, and the LangSmith project name.
+- Passed the focused tests, complete backend suite, frontend logic tests, and browser smoke test against the renamed codebase.
+- Created the new PythonAnywhere app from a fresh checkout and virtualenv under `/home/jobapplicationcoach`, set production environment values, initialized the fresh database, and verified the deployed two-call workflow.
+- The old `/home/airecruitingagent` path belongs only to the previous account and rollback deployment.

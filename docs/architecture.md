@@ -132,8 +132,9 @@ Live checks on 2026-08-18 established two material couplings:
   `qwen/qwen3.6-27b` configuration requires `none` for the strict JSON response
   path; incompatible values fail rather than degrade gracefully.
 - Groq admits a request against prompt tokens plus requested maximum completion
-  tokens. The current `4096` completion limit must be considered alongside the
-  account's token-per-minute limit when model or prompt size changes.
+  tokens. The configured default `2800` completion limit must be considered
+  alongside the account's token-per-minute limit when model or prompt size
+  changes.
 
 These are deployment configuration constraints, not reasons to add provider
 abstraction.
